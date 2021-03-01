@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import MovieList from './MovieList';
 import AddMovie from './AddMovie';
 import Nav from './Nav';
@@ -10,13 +10,11 @@ function App() {
   return(
   <MovieProvider>
     <div className="app">
-      <div className="todo-list">
         <Nav/>
         <AddMovie />
           <MovieList  />
-      </div>
     </div>
-    </MovieProvider>
+  </MovieProvider>
   )
   
 }
