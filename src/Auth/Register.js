@@ -7,6 +7,7 @@ const Register = () => {
     return (
     <div>
         <h3>Register form</h3>
+        <h1>TAILWIND CSS</h1>
     </div> 
     );
 }
