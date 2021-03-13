@@ -5,19 +5,28 @@ import Nav from './Nav';
 import Register from './Auth/Register';
 import {MovieProvider} from './MovieContext';
 import {Container} from 'react-bootstrap'
-import { AuthProvider } from './Context/AuthContext';
-
+import { AuthProvider } from './Context/AuthContext'; 
+import {BrowserRouter as Router , Switch ,Route } from 'react-router-dom';
+ 
 
 function App() {
 
   return(
-    <AuthProvider>
-      <Container className="d-flex align-items-center justify-content-center" style={{minHeight:"100vh"}}>
+    <>
+    <Container className="d-flex align-items-center justify-content-center" style={{minHeight:"100vh"}}>
         <div className="w-100" style={{maxWidth:"400px"}}>
-        <Register/>
+     
+        <Router>
+      <AuthProvider>
+        <Switch>
+          <Route path="/register" component={Register} />
+        </Switch>
+      
+      </AuthProvider>
+        </Router>
         </div>
         </Container>
-    </AuthProvider>
+ </>
        
   //      <MovieProvider>
   //   <div className="app">
