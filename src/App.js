@@ -3,6 +3,9 @@ import MovieList from './MovieList';
 import AddMovie from './AddMovie';
 import Nav from './Nav';
 import Register from './Auth/Register';
+import Login from './Auth/Login';
+import Dashboard from './Auth/Dashboard';
+
 import {MovieProvider} from './MovieContext';
 import {Container} from 'react-bootstrap'
 import { AuthProvider } from './Context/AuthContext'; 
@@ -19,7 +22,9 @@ function App() {
         <Router>
       <AuthProvider>
         <Switch>
+          <Route exact path="/" component={Dashboard} />
           <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
         </Switch>
       
       </AuthProvider>
