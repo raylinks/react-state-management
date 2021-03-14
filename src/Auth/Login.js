@@ -1,20 +1,25 @@
 import React, {useContext, useRef, useState} from 'react';
  import {Form, Button, Card, Alert} from 'react-bootstrap';
- import {Link } from 'react-router-dom'
+ import {Link , useHistory} from 'react-router-dom'
+ import {useAuth} from '../Context/AuthContext';
+
 
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const {login} = useAuth();
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const history = useHistory();
    
     function handleSubmit(e){
         e.preventDefault()
       
-            try{
+            try{ 
                 setError('');
                 setLoading(true);
-             //   signup(emailRef.current.value, passwordRef.current.value)
+                login(emailRef.current.value, passwordRef.current.value)
+                history.push("/")
             }catch{
                 setError('Failed to create an account')
             } 

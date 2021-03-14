@@ -12,6 +12,13 @@ export function AuthProvider({children}){
     function signUp(email,password){
        // return auth.
     }
+    function login(email,password){
+        // return auth.
+     }
+     function logout(){
+         //
+     }
+
 
 
     const value = {
