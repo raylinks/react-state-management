@@ -4,7 +4,9 @@ import AddMovie from './AddMovie';
 import Nav from './Nav';
 import Register from './Auth/Register';
 import Login from './Auth/Login';
+import UpdateProfile from './Auth/UpdateProfile'
 import Dashboard from './Auth/Dashboard';
+import ForgotPassword from './Auth/ForgotPassword';
 import PrivateRoute from './Auth/PrivateRoute'
 
 import {MovieProvider} from './MovieContext';
@@ -26,6 +28,8 @@ function App() {
           <PrivateRoute exact path="/" component={Dashboard} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/forgot-password" component={ForgotPassword} />
+          <Route path="/update-profile" component={UpdateProfile} />
         </Switch>
       
       </AuthProvider>

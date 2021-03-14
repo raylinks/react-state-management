@@ -19,6 +19,10 @@ export function AuthProvider({children}){
          //
      }
 
+     function resetPassword(email){
+         ///
+     }
+
 
 
     const value = {
