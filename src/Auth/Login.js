@@ -32,7 +32,7 @@ const Login = () => {
         <Card.Body>
         <h2 className="text-center mb-4">Login </h2>
         {error && <Alert variant="danger">{error}</Alert>}
-        <Form>
+        <Form onSubmit={handleSubmit}>
         <Form.Group id="email">
             <Form.Label>Email</Form.Label>
             <Form.Control type="email" ref={emailRef} required />

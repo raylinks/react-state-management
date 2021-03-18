@@ -8,11 +8,29 @@ export function useAuth(){
     return useContext(AuthContext)
 }
 
+
+
 export function AuthProvider({children}){
     const [currentUser, setCurrentUser] = useState(); 
 
+    //  doUserLogin(credentials: Credentials){
+    //             try{
+    //                 const response = await axios.post(UrlService/registerUrl(), credentials);
+    //                 return response.data;
+    //             }catch (error){
+    //                 console.error('Error', error.response);
+    //                 return false;
+    //             }
+    //         }
+
     function signUp(email,password){
-       // return auth.
+        try{
+            const response = await axios.post(UrlService/registerUrl(), email,password);
+            return response.data;
+        }catch (error){
+            console.error('Error', error.response);
+            return false;
+        }
     }
     function login(email,password){
         // return auth.
@@ -24,6 +42,7 @@ export function AuthProvider({children}){
      function resetPassword(email){
          ///
      }
+
 
 
 

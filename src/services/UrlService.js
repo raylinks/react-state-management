@@ -8,6 +8,8 @@ if(process.env.NODE_ENV == 'production'){
 
 class UrlService {
     static loginUrl() { return apiDomain + 'api/login'; }
+    static registerUrl() { return apiDomain + 'api/auth/register'; }
+
 }
 
 export default UrlService;
