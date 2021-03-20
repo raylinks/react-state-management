@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
-import UrlService from './services/UrlService';
+import UrlService from '../services/UrlService';
 
 const AuthContext = React.createContext()
 
@@ -23,9 +23,9 @@ export function AuthProvider({children}){
     //             }
     //         }
 
-    function signUp(email,password){
+    async function signUp(email,password){
         try{
-            const response = await axios.post(UrlService/registerUrl(), email,password);
+            const response = await axios.post(UrlService/registerUrl(), email);
             return response.data;
         }catch (error){
             console.error('Error', error.response);
