@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import axios from 'axios';
+import {axios} from '../utils/https';
 import UrlService from '../services/UrlService';
 
 const AuthContext = React.createContext()
@@ -13,15 +13,7 @@ export function useAuth(){
 export function AuthProvider({children}){
     const [currentUser, setCurrentUser] = useState(); 
 
-    //  doUserLogin(credentials: Credentials){
-    //             try{
-    //                 const response = await axios.post(UrlService/registerUrl(), credentials);
-    //                 return response.data;
-    //             }catch (error){
-    //                 console.error('Error', error.response);
-    //                 return false;
-    //             }
-    //         }
+  
     const user = {
         name: '',
         email:'',
@@ -30,10 +22,14 @@ export function AuthProvider({children}){
 
     async function signUp(name,email,password){
         try{
-            const response = await axios.post("http://localhost:8000/api/auth/register", { name: 'mm',
+            const response = await axios.post("/auth/register", { name: 'mm',
             email:'mm@gmail.com',
-            password:'11111'});
-            return response.data;
+            password:'11111'}
+            ).then(response => {
+                //console.log(response)
+                return response.data;
+            }).catch(error => {  console.log(error)});
+        
         }catch (error){
             console.error('Error', error.response);
             return false;
